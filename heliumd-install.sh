@@ -43,8 +43,15 @@ _rpcUserName=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 12 ; echo '')
 # Choose a random and secure password for the RPC
 _rpcPassword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 ; echo '')
 
-# Get the IP address of your vps which will be hosting the helium
+# Get the IP address of your vps which will be hosting heliumd
 _nodeIpAddress=$(ip route get 1 | awk '{print $NF;exit}')
+
+# Check for swap file - if none, create one
+if free | awk '/^Swap:/ {exit !$2}'; then
+    echo ""
+else
+    fallocate -l 1G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile && cp /etc/fstab /etc/fstab.bak && echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
+fi
 
 # Make a new directory for helium daemon
 mkdir ~/.helium/
