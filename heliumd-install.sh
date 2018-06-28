@@ -1,6 +1,6 @@
 #!/bin/bash
-# heliumd-install.sh
-# Installs heliumd without a masternode on Ubuntu 16.04 LTS x64
+# install.sh
+# Installs Helium daemon on Ubuntu 16.04 LTS x64
 
 if [ "$(whoami)" != "root" ]; then
   echo "Script must be run as user: root"
@@ -43,7 +43,7 @@ _rpcUserName=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 12 ; echo '')
 # Choose a random and secure password for the RPC
 _rpcPassword=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32 ; echo '')
 
-# Get the IP address of your vps which will be hosting heliumd
+# Get the IP address of your vps which will be hosting the helium
 _nodeIpAddress=$(ip route get 1 | awk '{print $NF;exit}')
 
 # Check for swap file - if none, create one
@@ -69,7 +69,6 @@ server=1
 daemon=1
 logtimestamps=1
 maxconnections=64
-externalip=${_nodeIpAddress}
 bind=${_nodeIpAddress}
 addnode=minkiz.co
 " > helium.conf
