@@ -16,10 +16,15 @@ while true; do
       if [ ${pID} ]; then
           kill ${pID}      
           rm -rf ~/.helium/
+          if [ -d ~/helium ]; then
+              rm -rf ~/helium/
+          else
+              echo ""
+          fi    
           break
       else
           echo "No instance of helium running"
-      fi    
+      fi  
    else
       if [ ${REPLY} == "n" ]; then
         exit
