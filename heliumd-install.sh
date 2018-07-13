@@ -109,9 +109,9 @@ mkdir heliumnode
 cd ~/heliumnode/
 
 # Download the appropriate scripts
-wget https://raw.githubusercontent.com/cryptotronxyz/heliumnode/master/makerun.sh
-wget https://raw.githubusercontent.com/cryptotronxyz/heliumnode/master/checkdaemon.sh
-wget https://raw.githubusercontent.com/cryptotronxyz/heliumnode/master/clearlog.sh
+wget https://raw.githubusercontent.com/cryptotronxyz/heliumd/master/makerun.sh
+wget https://raw.githubusercontent.com/cryptotronxyz/heliumd/master/checkdaemon.sh
+wget https://raw.githubusercontent.com/cryptotronxyz/heliumd/master/clearlog.sh
 
 # Create a cronjob for making sure heliumd runs after reboot
 if ! crontab -l | grep "@reboot ~/helium/src/heliumd -daemon"; then
