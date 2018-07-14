@@ -87,6 +87,7 @@ cd
 set -e
 git clone https://github.com/heliumchain/helium
 cd helium
+apt-get update -y && apt-get upgrade -y
 apt-get install automake -y
 add-apt-repository ppa:bitcoin/bitcoin -y
 apt-get update -y
