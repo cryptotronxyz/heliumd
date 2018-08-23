@@ -85,7 +85,7 @@ cd
 
 # Install heliumd
 set -e
-git clone https://github.com/heliumchain/helium
+git clone https://github.com/SavvyBlockProject/helium
 cd helium
 apt-get update -y && apt-get upgrade -y
 apt-get install automake -y
