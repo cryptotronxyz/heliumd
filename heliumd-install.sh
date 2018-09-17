@@ -79,7 +79,6 @@ daemon=1
 logtimestamps=1
 maxconnections=64
 bind=${_nodeIpAddress}
-addnode=minkiz.co
 " > helium.conf
 cd
 
