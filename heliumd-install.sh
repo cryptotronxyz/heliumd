@@ -79,15 +79,6 @@ daemon=1
 logtimestamps=1
 maxconnections=64
 bind=${_nodeIpAddress}
-addnode=107.191.45.6
-addnode=91.200.102.183
-addnode=45.76.97.49
-addnode=155.94.181.141
-addnode=207.148.3.189
-addnode=192.210.160.43
-addnode=45.76.81.210
-addnode=192.210.160.220
-addnode=95.179.195.193
 " > helium.conf
 cd
 
